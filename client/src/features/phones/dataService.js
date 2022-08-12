@@ -3,7 +3,7 @@
 
 const postPhoneNumber = async (phone_number, code) => {
 
-   const res = await fetch('http://localhost:5000/phones', {
+   const res = await fetch('/phones', {
     method:'POST',
     headers: {'Content-Type': 'application/json'},
     body: JSON.stringify({
@@ -18,7 +18,7 @@ const postPhoneNumber = async (phone_number, code) => {
 
 const getAll = async () => {
 
-    const res = await fetch('http://localhost:5000/phones')
+    const res = await fetch('/phones')
     const data = await res.json()
 
     return data;

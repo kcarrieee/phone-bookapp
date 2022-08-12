@@ -3,6 +3,7 @@ import {  useDispatch, useSelector } from 'react-redux'
 import { postNewNumber } from '../features/phones/dataSlice'
 import { countryCodes } from '../config'
 
+
 const Form = () => {
 
     const dispatch = useDispatch()
@@ -38,12 +39,14 @@ const Form = () => {
             code: code }
         ))
         setPhone('')
+
     }
 
     useEffect(() => {
         if(isError){
         alert(message)
        }
+       
     }, [isError, message]);
    
 
