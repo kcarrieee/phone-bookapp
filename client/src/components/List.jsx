@@ -24,7 +24,7 @@ const List = () => {
     {phones.length === 0 ? (<div>No Phone Numbers yet</div>): null}
       <div className='list'>
             {phones.map((phone)=>(
-               <div key={phone.pid} className="card">Phone Number:  <p>+{phone.phone_number}</p></div> 
+               <div key={phone.pid} className="card">Phone Number:  <p>+{phone.code}{phone.phone_number}</p></div> 
             )).reverse()}
         </div>
     </>

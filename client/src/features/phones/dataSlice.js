@@ -11,9 +11,9 @@ const initialState = {
 }
 
 export const postNewNumber = createAsyncThunk('number/create',
-    async({phone_number}, thunkAPI)=>{
+    async({phone_number, code}, thunkAPI)=>{
         try {
-            return await dataService.postPhoneNumber(phone_number)
+            return await dataService.postPhoneNumber(phone_number,code)
         } catch (error) {
             const message = ( error.response && error.response.data && error.response.data.message )
             || error.message || error.toString()
