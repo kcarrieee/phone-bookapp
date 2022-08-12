@@ -2,6 +2,6 @@
 
 CREATE TABLE phones(
     pid SERIAL PRIMARY KEY,
-    phone_number NUMERIC,
+    phone_number INT,
     code INT
 );
