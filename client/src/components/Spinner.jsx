@@ -2,7 +2,9 @@ import React from 'react'
 
 const Spinner = () => {
   return (
-    <div class="dots-bars-5"></div>
+    <div className='wrapper'>
+    <div className="dots-bars-5"></div>
+    </div>
   )
 }
 

@@ -11,7 +11,7 @@ const initialState = {
 }
 
 export const postNewNumber = createAsyncThunk('number/create',
-    async(phone_number, thunkAPI)=>{
+    async({phone_number}, thunkAPI)=>{
         try {
             return await dataService.postPhoneNumber(phone_number)
         } catch (error) {
@@ -34,9 +34,7 @@ export const getNumbers = createAsyncThunk('numbers/getAll',
 export const dataSlice = createSlice({
     name:'data',
     initialState,   
-    reducers:{
-        reset:(state) => initialState
-    },
+    reducers: {},
     extraReducers: (builder) => {
         builder
             .addCase(postNewNumber.pending, (state)=>{
@@ -45,7 +43,7 @@ export const dataSlice = createSlice({
             .addCase(postNewNumber.fulfilled, (state, action)=>{
                 state.isLoading = false
                 state.isSuccess = true
-                state.phones.push(action.payload)
+                state.phones.push(...action.payload)
             })
             .addCase(postNewNumber.rejected, (state, action)=>{
                 state.isLoading = false
@@ -68,5 +66,5 @@ export const dataSlice = createSlice({
     }
 })
 
-export const { reset } = dataSlice.actions
+
 export default dataSlice.reducer

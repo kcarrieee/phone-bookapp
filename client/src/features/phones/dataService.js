@@ -7,11 +7,10 @@ const postPhoneNumber = async (phone_number) => {
     method:'POST',
     headers: {'Content-Type': 'application/json'},
     body: JSON.stringify({
-        phone_number
-    })
+      phone_number: phone_number
+   })
    })
    const data = await res.json()
-   console.log(data)
 
    return data;
 }

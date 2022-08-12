@@ -138,3 +138,10 @@ select::-ms-expand {
     -moz-box-shadow: 1px 0px 8px -2px rgba(34, 60, 80, 0.2);
     box-shadow: 1px 0px 8px -2px rgba(34, 60, 80, 0.2);
 }
+.wrapper{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 200px auto;
+}

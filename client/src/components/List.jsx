@@ -6,7 +6,6 @@ import Spinner from './Spinner'
 const List = () => {
     const { 
         phones,
-        isSuccess,
         isLoading
        } = useSelector((state) => state.data)
 
@@ -14,13 +13,7 @@ const List = () => {
 
     useEffect(()=>{
         dispatch(getNumbers())
-
-        return () =>{
-            if(isSuccess){
-                dispatch(getNumbers())
-            }
-        }
-    },[dispatch,isSuccess])
+    },[dispatch])
 
     if(isLoading){
         return <Spinner/>

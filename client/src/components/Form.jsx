@@ -10,12 +10,13 @@ const Form = () => {
     const [phone, setPhone] = useState('')
     const [btnDisabled, setbtnDisabled] = useState(true);
     const [validation, setValidation] = useState('');
-    const phoneNumber = parseInt(`${code}${phone}`)
+
+    const phone_number = parseInt(`${code}${phone}`)
 
     function handleText(e){
-        if (phone === '' | null){
-             setbtnDisabled(true)
-             setValidation('phone number should contain from 3 to 10 characters')
+        if (phone === '' || null || phone.trim().length<3 || phone.trim().length>10){
+            setbtnDisabled(true)
+            setValidation('phone number should contain from 3 to 10 characters')
         }else if(phone !== '' && phone.trim().length>3 && phone.trim().length<10){
             setbtnDisabled(false)
         }else{
@@ -27,9 +28,12 @@ const Form = () => {
 
     const onSubmit = (e) => {
         e.preventDefault()
-        dispatch(postNewNumber(phoneNumber))
-    
+        dispatch(postNewNumber(
+          { phone_number }
+        ))
+        // window.location = "/"
     }
+
    
 
   return (
