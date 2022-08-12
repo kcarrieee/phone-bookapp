@@ -1,4 +1,4 @@
-CREATE DATABASE phones_database;
+-- CREATE DATABASE phones_database;
 
 CREATE TABLE phones(
     pid SERIAL PRIMARY KEY,
